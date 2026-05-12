@@ -3,7 +3,7 @@ import { FAQ } from "@/components/landing/faq";
 
 export default function PricingPage() {
   return (
-    <div className="pt-8">
+    <div className="pb-6">
       <Pricing />
       <FAQ />
     </div>

@@ -1,57 +1,50 @@
 import { config } from "@/lib/config";
+import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export function CTA() {
   return (
-    <section className="py-24 bg-[#0F172A] relative overflow-hidden">
-      {/* Decorative bg glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#2563EB] opacity-10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[#22C55E] opacity-5 rounded-full blur-[80px] pointer-events-none" />
+    <section className="relative overflow-hidden bg-black py-20 sm:py-24">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-brand-primary/12 blur-[140px]" />
+      <div className="pointer-events-none absolute inset-0 dot-grid opacity-40" />
 
-      {/* Dot grid overlay */}
-      <div className="absolute inset-0 dot-grid opacity-50" />
+      <div className="relative mx-auto max-w-4xl px-4 sm:px-6">
+        <div className="surface-card rounded-[2.75rem] px-6 py-10 text-center sm:px-10 sm:py-12">
+          <div className="stat-pill inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm text-white/72">
+            <span className="h-2 w-2 rounded-full bg-brand-primary" />
+            {config.hero.socialProof}
+          </div>
 
-      <div className="relative max-w-4xl mx-auto px-6 text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 stat-pill text-white/70 text-sm px-4 py-2 rounded-full mb-8">
-          <span className="w-2 h-2 rounded-full bg-[#22C55E] animate-pulse" />
-          {config.hero.socialProof}
-        </div>
+          <h2 className="mt-8 font-heading text-4xl font-semibold leading-tight tracking-[-0.04em] text-white sm:text-5xl">
+            Your work is worth getting paid for.
+            <br />
+            <span className="text-brand-primary">Vibiz makes sure you are.</span>
+          </h2>
 
-        <h2 className="font-heading font-bold text-4xl md:text-5xl text-white tracking-tight leading-tight">
-          Your work is worth getting paid for.
-          <br />
-          <span className="text-[#22C55E]">Vibiz makes sure you are.</span>
-        </h2>
+          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/54 sm:text-lg">
+            Stop leaving money on the table. Join thousands of freelancers who invoice faster and get paid sooner with Vibiz.
+          </p>
 
-        <p className="mt-6 text-white/50 text-lg max-w-xl mx-auto leading-relaxed">
-          Stop leaving money on the table. Join thousands of freelancers who invoice faster and get paid sooner with Vibiz.
-        </p>
+          <div className="mt-10 flex justify-center">
+            <Button href="/signup" size="lg" className="cta-glow group w-full sm:w-auto">
+              {config.hero.cta.text}
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </div>
 
-        {/* CTA button */}
-        <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="/signup"
-            className="inline-flex items-center justify-center gap-2 bg-[#22C55E] text-white font-bold text-lg px-10 py-5 rounded-xl hover:bg-[#16a34a] transition-all duration-200 cta-glow group"
-          >
-            {config.hero.cta.text}
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
-        </div>
-
-        {/* Micro-trust row */}
-        <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-3 mt-8">
-          {[
-            "No credit card required",
-            "14-day free trial",
-            "Cancel anytime",
-            "Setup in under 5 minutes",
-          ].map(item => (
-            <span key={item} className="flex items-center gap-1.5 text-white/40 text-sm">
-              <CheckCircle2 className="w-4 h-4 text-[#22C55E]" />
-              {item}
-            </span>
-          ))}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            {[
+              "No credit card required",
+              "14-day free trial",
+              "Cancel anytime",
+              "Setup in under 5 minutes",
+            ].map((item) => (
+              <span key={item} className="surface-chip flex items-center gap-2 rounded-full px-4 py-3 text-sm text-white/48">
+                <CheckCircle2 className="h-4 w-4 text-brand-primary" />
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>

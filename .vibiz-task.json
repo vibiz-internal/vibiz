@@ -1,0 +1,6 @@
+{
+  "title": "Restyled the app with a premium dark iOS-inspired UI system",
+  "description": "Updated the landing, auth, dashboard, and shared UI components to use a black/orange rounded visual language while preserving routes and core interactions.",
+  "status": "ok",
+  "database": { "kind": "postgres" }
+}

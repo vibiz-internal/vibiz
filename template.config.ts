@@ -7,11 +7,11 @@ export const config = {
   },
   "brand": {
     "colors": {
-      "primary": "#2563EB",
-      "secondary": "#0F172A",
-      "accent": "#22C55E",
-      "background": "#F9FAFB",
-      "foreground": "#111111"
+      "primary": "#F97316",
+      "secondary": "#171717",
+      "accent": "#FDBA74",
+      "background": "#000000",
+      "foreground": "#F5F5F5"
     },
     "fonts": {
       "heading": "Inter",

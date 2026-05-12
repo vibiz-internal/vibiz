@@ -9,20 +9,14 @@ import { CTA } from "@/components/landing/cta";
 
 export default function LandingPage() {
   return (
-    <div className="bg-[#0F172A]">
+    <div className="min-h-screen bg-black text-white">
       <Navbar />
-      <main>
-        {/* Hero — dark, bold */}
+      <main className="overflow-hidden">
         <Hero />
-        {/* Features — white bg */}
         <Features />
-        {/* Testimonials — light gray bg */}
         <Testimonials />
-        {/* Pricing — white bg */}
         <Pricing />
-        {/* FAQ — light gray bg */}
         <FAQ />
-        {/* Final CTA — dark */}
         <CTA />
       </main>
       <Footer />

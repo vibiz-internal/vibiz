@@ -24,19 +24,22 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-8">
-      <h1 className="text-2xl font-heading font-bold text-center">Welcome back</h1>
-      <p className="text-gray-500 text-center mt-2 text-sm">Sign in to your account</p>
-      <form onSubmit={handleSubmit} className="mt-8 space-y-4">
+    <div className="surface-card rounded-[2.25rem] p-8 shadow-[0_30px_100px_rgba(0,0,0,0.45)] sm:p-10">
+      <span className="surface-chip inline-flex rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-white/52">
+        Sign in
+      </span>
+      <h1 className="mt-6 text-4xl font-heading font-semibold tracking-tight text-white">Welcome back</h1>
+      <p className="mt-3 text-sm text-white/55">Sign in to your account</p>
+      <form onSubmit={handleSubmit} className="mt-8 space-y-5">
         <Input label="Email" id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
         <Input label="Password" id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-        {error && <p className="text-sm text-red-500">{error}</p>}
-        <Button type="submit" className="w-full" disabled={loading}>
+        {error && <p className="rounded-[1.25rem] border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-200">{error}</p>}
+        <Button type="submit" size="lg" className="w-full cta-glow" disabled={loading}>
           {loading ? "Signing in..." : "Sign in"}
         </Button>
       </form>
-      <p className="text-center text-sm text-gray-500 mt-6">
-        Don&apos;t have an account? <a href="/signup" className="text-brand-primary font-medium hover:underline">Sign up</a>
+      <p className="mt-6 text-center text-sm text-white/45">
+        Don&apos;t have an account? <a href="/signup" className="font-medium text-brand-primary hover:text-[#fb923c]">Sign up</a>
       </p>
     </div>
   );
